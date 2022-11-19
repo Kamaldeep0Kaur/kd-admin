@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="admin.css">
+    </head>
+    <body>
+        <header style="margin-left:20%">
+             <div class="bg-white" style="height:70px; margin:0%; padding:10px;">
+                <div class="input-group float-start mt-2" style="width:400px;">
+                  <div class="form-outline">
+                    <input type="search" id="form1" class="form-control bg-light border-0" style="width:350px;"
+                    placeholder="search for..."/>
+                  </div>
+                  <button type="button" class="btn btn-primary border-0">
+                   <i class="fas fa-search"></i>
+                   
+                  </button>
+                </div>
+                <div class="float-end mt-2">
+                  <ul class="list-inline">
+                   <li class="list-inline-item mx-3">
+                     <i class="fa-solid fa-bell text-muted fs-5"></i>
+                     <sup>
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3+
+                      </span>
+                   </li>
+                   <li class="list-inline-item mx-3">
+                     <i class="fa-solid fa-envelope text-muted fs-5"></i>
+                     <sup>
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        7
+                      </span>
+                    </sup>
+                   </li>
+                   <li class="list-inline-item text-muted mx-3">Douglas McGee
+                   <img src="assets/logo.jpg" alt="Avatar Logo" style="width:30px;" class="rounded-pill"> 
+                   </li>
+                  </ul>
+                </div>
+              </div>
+        </header>
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-blue" style="width:20%; float:left;height:100%">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <i class="fa-sharp fa-solid fa-face-laugh-wink fs-2 pe-2"></i>
+              <span class="fs-4">SB Admin<sup>2</sup></span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link active border-bottom mb-3" aria-current="page">
+                    <i class="fa-sharp fa-solid fa-gauge"></i>
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <h6 class="text-grey">INTERFACE</h6>
+                <a href="#" class="nav-link text-white">
+                    <i class="fa-solid fa-gear"></i>
+                  Components
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                  <i class="fa-solid fa-wrench"></i>
+                  utilities
+                </a>
+              </li>
+              <li>
+                <h6 class="text-grey">ADDONS</h6>
+                <a href="#" class="nav-link text-white">
+                    <i class="fa-solid fa-folder"></i>
+                  Pages
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                    <i class="fa-solid fa-chart-area"></i>
+                  Charts
+                </a>
+              </li>
+              <li>
+                <a href="tables.html" class="nav-link text-white">
+                    <i class="fa-solid fa-table"></i>
+                  Tables
+                </a>
+              </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+              <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>mdo</strong>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+       
+        <main class="float:right" style="background-color:rgb(227, 224, 224);width:80%;margin-left:20%;">
+            <h1 class="p-4 fw-normal text-dark">Dashboard</h1>
+            <div class="container">
+                <div class="row">
+                <div class="col-8">
+                    <div class="card mb-3 shadow">
+                        <div class="card-header text-primary fw-bold p-3">
+                          Earnings Overview
+                        </div>
+                        <div class="chartbox">
+                          <canvas id="myChart" style="height:300px"></canvas>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card mb-3 shadow">
+                        <div class="card-header text-primary fw-bold p-3">
+                          Revenue Sources
+                        </div>
+                        <div class="chartbox">
+                          <canvas id="myPieChart" style="height:300px"></canvas>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="margin-2">
+                            <div class="shadow p-3 mb-5 bg-white rounded border-left1 justify-content-between" style="height:100px;">
+                              <div class="float-start">
+                                <div class="text-primary fs-6">EARNINGS (MONTHLY)</div>
+                                <div class="fs-4 fw-bold">$40,000</div>
+                              </div>
+                              <div class="float-end">
+                                <i class="fa-sharp fa-solid fa-calendar fa-grey fs-1"></i>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="margin-2">
+                            <div class="shadow p-3 mb-5 bg-white rounded border-left2" style="height:100px;">
+                              <div class="float-start">
+                                <div class="text-info fs-6">TASKS</div>
+                                <div class="fs-4 fw-bold">50%</div>
+                              </div>
+                                <div class="float-end">
+                                  <i class="fa-sharp fa-solid fa-dollar-sign fa-grey fs-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="margin-2">
+                            <div class="shadow p-3 mb-5 bg-white rounded border-left3" style="height:100px;">
+                              <div class="float-start">
+                                <div class="text-success fs-6">EARNINGS (ANNUALY)</div>
+                                <div class="fs-4 fw-bold">$215,000</div>
+                              </div>
+                                <div class="float-end">
+                                  <i class="fa-sharp fa-solid fa-clipboard-list fa-grey fs-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">   
+                        <div class="margin-2">
+                            <div class="shadow p-3 mb-5 bg-white rounded border-left4" style="height:100px;">
+                              <div class="float-start">
+                              <div class="text-warning fs-6">PANDING REQUESTS</div>
+                              <div class="fs-4 fw-bold">18</div>
+                            </div>
+                              <div class="float-end">
+                                <i class="fa-sharp fa-solid fa-comments fa-grey fs-1"></i>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                    <div class="bg-white shadow rounded-3 mb-5">
+                        <div class="bg-light border-bottom p-3 text-primary fw-bold rounded-3">Projects</div>
+                        <div class="p-3">
+                        <div class="m-3">
+                        <div class="text-muted justify-content-between fw-normal my-2">
+                            <div style="width:90%; float: left;">server migration</div>
+                            <div>20%</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                        <div class="m-3">
+                            <div class="text-muted justify-content-between fw-normal my-2">
+                                <div style="width:90%; float: left;">sales tracking</div>
+                                <div>40%</div>
+                            </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                        <div class="m-3">  
+                            <div class="text-muted justify-content-between fw-normal my-2">
+                                <div style="width:90%; float: left;">coustmer database</div>
+                                <div>60%</div>
+                            </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                         </div>
+                        <div class="m-3">
+                            <div class="text-muted justify-content-between fw-normal my-2">
+                                <div style="width:90%; float: left;">payout detailes</div>
+                                <div>80%</div>
+                            </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        </div>
+                        <div class="m-3">
+                            <div class="text-muted justify-content-between fw-normal my-2">
+                                <div style="width:85%; float:left;">account setup</div>
+                                <div>complete!</div>
+                            </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="p-3 mb-2 bg-primary text-white rounded-3" style="height:70px;">primary</div>
+                                <div class="p-3 mb-2 bg-info text-white rounded-3" style="height:70px;">info</div>
+                                <div class="p-3 mb-2 bg-danger text-white rounded-3" style="height:70px;">danger</div>
+                                <div class="p-3 mb-2 bg-light text-dark rounded-3" style="height:70px;">light</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 mb-2 bg-success text-white rounded-3" style="height:70px;">success</div>
+                        
+                                <div class="p-3 mb-2 bg-warning text-dark rounded-3" style="height:70px;">warning</div>
+                                
+                                <div class="p-3 mb-2 bg-secondary text-white rounded-3" style="height:70px;">secondary</div>
+                                
+                                <div class="p-3 mb-2 bg-dark text-white rounded-3" style="height:70px;">dark</div>
+                            </div>
+                        </div>
+                     </div>
+                    </div> 
+                   <div class="col-6">
+                    <div class="margin-4">
+                       <div class="card shadow">
+                         <div class="card-header text-primary fw-bold p-3">
+                           Illustration
+                          </div>
+                        <div class="card-body">
+                         <h5 class="card-title"><img src="assets/img.jpg" style="width: 100%;"></h5>
+                         <p class="card-text">Add some quality, svg illustrations
+                         to your project courtesy of unDraw, a constantly updated
+                          collection of beautiful svg images that you can use 
+                          completely free and without attribution!
+                        </p>
+                         <a href="#" class="text-primary text-decoration-none">Browse Illustration on unDrawn</a>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="card mt-4 mb-4 shadow" >
+                        <div class="card-header text-primary fw-bold">
+                         Development Approach
+                        </div>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item">SB Admin 2 makes extensive use of Bootstrap 4 utility
+                          classes in order to reduce CSS bloat and poor page performance. Custom CSS classes
+                           are used to create custom components and custom utility classes.
+                         <br><br>
+                         Before working with this theme, you should become familiar with the
+                          Bootstrap framework, especially the utility classes.</li>
+                       </ul>
+                     </div>
+                  </div>
+                </div>
+            </div>
+        </main>
+        <footer class="text-muted text-center align-items-center p-4">Copyright © Your Website 2021</footer>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+          const ctx = document.getElementById('myChart');
+          var myLineChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          datasets: [{
+            
+          lineTension: 0.3,
+          backgroundColor: "rgba(78, 115, 223, 0.05)",
+          borderColor: "rgba(78, 115, 223, 1)",
+          pointRadius: 3,
+          pointBackgroundColor: "rgba(78, 115, 223, 1)",
+          pointBorderColor: "rgba(78, 115, 223, 1)",
+          pointHoverRadius: 3,
+          pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+          pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+          pointHitRadius: 10,
+          pointBorderWidth: 2,
+          data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+        }],
+      },
+        options: {
+        maintainAspectRatio: false,
+          layout: {
+          padding: {
+          left: 30,
+          right: 25,
+          top: 25,
+          bottom:30
+        }
+      },
+       scales: {
+         xAxes: [{
+          time: {
+            unit: 'date'
+          },
+        gridLines: {
+          display: false,
+          drawBorder: false
+        },
+        ticks: {
+          maxTicksLimit: 7
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          maxTicksLimit: 5,
+          padding: 10,
+          // Include a dollar sign in the ticks
+          callback: function(value, index, values) {
+            return '$' + number_format(value);
+          }
+        },
+        gridLines: {
+          color: "rgb(234, 236, 244)",
+          zeroLineColor: "rgb(234, 236, 244)",
+          drawBorder: false,
+          borderDash: [2],
+          zeroLineBorderDash: [2]
+        }
+      }],
+    },
+    Plugin:{
+       legend: {
+        display: false
+       }},
+       tooltips: {
+         backgroundColor: "rgb(255,255,255)",
+         bodyFontColor: "#858796",
+         titleMarginBottom: 10,
+         titleFontColor: '#6e707e',
+         titleFontSize: 14,
+         borderColor: '#dddfeb',
+         borderWidth: 1,
+         xPadding: 15,
+         yPadding: 15,
+         displayColors: false,
+         intersect: false,
+         mode: 'index',
+         caretPadding: 10,
+          callbacks: {
+          label: function(tooltipItem, chart) {
+          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+        }
+      }
+    }
+  }
+});
+        </script>
+        <script>
+           var pcx = document.getElementById("myPieChart");
+           var myPieChart = new Chart(pcx, {
+            type: 'doughnut',
+               data: {
+                labels: ["Direct", "Referral", "Social"],
+               datasets: [{
+               data: [55, 30, 15],
+               backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+               hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+               hoverBorderColor: "rgba(234, 236, 244, 1)",
+              }],
+             },
+             options: {
+            maintainAspectRatio: false,
+             tooltips: {
+             backgroundColor: "rgb(255,255,255)",
+             bodyFontColor: "#858796",
+             borderColor: '#dddfeb',
+             borderWidth: 1,
+              xPadding: 30,
+              yPadding: 30,
+              displayColors: false,
+              caretPadding: 20,
+             },
+             legend: {
+              display: false
+           },
+          cutoutPercentage: 80,
+         },
+        });
+        </script>
+</html>
