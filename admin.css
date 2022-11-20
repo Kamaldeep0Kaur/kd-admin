@@ -23,3 +23,36 @@
 .fa-grey{
     color: #dddfeb!important;
 }
+.btn-circle{
+    border-radius: 50%;
+}
+.bg-navy{
+    background-color:#3b5998;
+}
+.bg-navy:hover{
+    background-color:#3b5998;
+}
+.bg-darkblue{
+    background-color:#0254ab;
+}
+.darkgreen{
+    background-color: #1c7a32;
+}
+.darkinfo{
+    background-color: #138293;
+}
+.darkred{
+    background-color:rgb(185, 1, 1);
+}
+.darkyellow{
+    background-color: #ffa600;
+}
+.extradark{
+    background-color: rgb(67, 67, 67);
+}
+.darkgrey{
+    background-color:rgb(173, 172, 172);
+}
+.bg-lightblue{
+    background-color: #9fcfff;
+}
